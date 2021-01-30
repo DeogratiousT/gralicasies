@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Recipe extends Model
+class Category extends Model
 {
-
     use HasSlug;
 
-    protected $fillable = ['name','slug','author_id','decription','ingredients','number_of_ingredients','directions','people','video_views','category_id','preparation_time'];
+    protected $fillable = ['name','slug'];
 
     /**
      * Get the options for generating the slug.
@@ -33,13 +32,8 @@ class Recipe extends Model
         return 'slug';
     }
 
-    public function author()
+    public function recipes()
     {
-        return $this->belongsTo('App\User','author_id');
-    }
-
-    public function category()
-    {
-        return $this->belongsTo('App\Models\Category');
+        return $this->hasMany('App\Models\Recipe');
     }
 }
