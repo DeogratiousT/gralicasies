@@ -36,13 +36,15 @@
 </head>
 <body>
     <div id="page-top">
-        @include('includes.navbar')
 
         <main>
+            @include('includes.navbar')
+
             @yield('content')
+
+            @include('includes.footer')
         </main>
 
-        @include('includes.footer')
 
     </div>
     <!-- Bootstrap core JS-->

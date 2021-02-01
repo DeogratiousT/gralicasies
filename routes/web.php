@@ -22,3 +22,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+
+Route::resource('categories','CategoryController');
+Route::resource('recipes','RecipeController');
+Route::resource('posts','PostController');

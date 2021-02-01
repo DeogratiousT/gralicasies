@@ -39,6 +39,11 @@ class User extends Authenticatable
 
     public function recipes()
     {
-        return $this->hasMany('App\Models\Recipes');
+        return $this->hasMany('App\Models\Recipe');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
     }
 }
